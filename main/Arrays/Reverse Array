@@ -1,0 +1,14 @@
+  public static List<Integer> reverseArray(List<Integer> a) {
+    // Write your code here
+         int b = a.size();
+         List<Integer> re = new ArrayList<>();
+         for(int i = b-1;i>=0;i--)
+         {
+             re.add(a.get(i));
+             
+         }
+         return re;
+
+    }
+
+
