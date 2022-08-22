@@ -1,0 +1,38 @@
+ public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+        
+        int len = arr.size()-1;
+        int i = 0;
+        List<Integer> arr2 = new ArrayList<Integer>();
+        List<Integer> arr3 = new ArrayList<Integer>();
+        
+        while(i<d)
+        {
+            arr2.add(arr.get(i));
+            i++;
+        }
+        
+        
+        int j = d;
+        while(j<=len)
+        {
+         arr3.add(arr.get(j));  
+         j++; 
+        }
+        
+        i=0;
+        
+        while(i<arr2.size())
+        {
+            arr3.add(arr2.get(i));
+            i++;
+        }
+        
+        
+        return arr3;
+        
+        
+    
+
+    }
+
+}
