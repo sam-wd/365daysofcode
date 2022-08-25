@@ -1,0 +1,47 @@
+public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
+    // Write your code here
+    SinglyLinkedListNode newnode = new SinglyLinkedListNode(data);
+    SinglyLinkedListNode root;
+    if(position < 1)
+    {
+        root = llist;
+        newnode.next = root;
+        root = newnode;
+        return llist;
+        
+        
+    }
+    //position > llist.size() can only be used when we are using linked list from java.util class here i have used the self defined class
+    // else if()
+    // {
+    //     while(llist.next != null)
+    //     {
+    //         llist = llist.next;
+    //     }
+    //     llist.next = newnode;
+    //     newnode.next = null;
+    //     return llist;
+        
+    // }
+    else
+    {
+        SinglyLinkedListNode current = llist.next;
+        SinglyLinkedListNode prev = llist;
+        int currentIndex = 1;
+        
+        while(current != null)
+        {
+          if(currentIndex == position)
+          {
+              newnode.next = current;
+              prev.next = newnode;
+              break;
+          }   
+          
+          prev = current;
+          current = current.next;
+          currentIndex++;
+        }
+        return llist;
+    }
+    
