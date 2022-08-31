@@ -1,0 +1,15 @@
+  public static int getNode(SinglyLinkedListNode llist, int positionFromTail) {
+    // Write your code here
+    int index = 0;
+    SinglyLinkedListNode current = llist;
+    SinglyLinkedListNode result = llist;
+    while(current!=null)
+    {
+        current=current.next;
+        if (index++>positionFromTail)
+        {
+            result=result.next;
+        }
+    }
+    return result.data;
+    }
