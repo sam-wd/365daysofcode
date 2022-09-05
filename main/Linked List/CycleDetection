@@ -9,7 +9,8 @@
                         return true;
                 }
         }
-        return false; // Fast pointer hit the end of the list, so there is no loop
+        return false; 
+        // Fast pointer hit the end of the list, so there is no loop
 
 
     }
