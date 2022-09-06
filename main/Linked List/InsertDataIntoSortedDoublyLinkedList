@@ -1,0 +1,34 @@
+ public static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
+    // Write your code here
+      DoublyLinkedListNode p = new DoublyLinkedListNode(data);
+DoublyLinkedListNode q = head;
+
+if(q.data > data)
+{
+    q.prev = p;
+    p.next = q;
+    p.prev = null;
+    head = p;
+    return head;
+}
+while(q!=null)
+{
+    if (q.data >= data)
+    {
+        p.next = q;
+        p.prev = q.prev;
+        q.prev.next = p;
+        return head;
+    }
+    else if (q.next==null)
+    {
+        q.next = p;
+        p.prev = q;
+        p.next = null;
+        return head;
+    }
+    q = q.next;
+}
+return head;
+
+    }
