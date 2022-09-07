@@ -1,0 +1,17 @@
+ public static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
+    // Write your code here
+    DoublyLinkedListNode temp = head;
+DoublyLinkedListNode crnt = head;
+while(crnt!=null)
+{
+temp = crnt.prev;
+crnt.prev = crnt.next;
+crnt.next = temp;
+crnt = crnt.prev;
+}
+if(temp!=null)
+{
+head = temp.prev;
+}
+return head;
+}
